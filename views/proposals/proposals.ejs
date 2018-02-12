@@ -1,0 +1,10 @@
+<div>DANI DOES HTML CSS</div>
+<a href="/proposals/new">Create Proposal</a>
+<% proposals.forEach((theProposal) => { %>
+  <div>
+    <a href="/proposals/<%= theProposal._id %>"> <%= theProposal.name %></a> 
+    <div class="proposal-status">
+      <%= theProposal.status %>
+    </div>
+  </div>
+<%});%>

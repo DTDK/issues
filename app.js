@@ -10,7 +10,7 @@ const expressLayouts = require('express-ejs-layouts');
 // const favicon = require('serve-favicon');
 
 const index = require('./routes/index');
-// const users = require('./routes/users');
+const proposals = require('./routes/proposals');
 
 const app = express();
 
@@ -40,7 +40,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // ---- Routes ----
 
 app.use('/', index);
-// app.use('/users', users);
+app.use('/proposals', proposals);
 
 // ---- Error Handling ----
 
