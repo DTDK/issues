@@ -20,7 +20,7 @@ const users = [
 const proposals = [
   {
     name: 'Pizza Fridays',
-    text: 'SSDFSDF SDFsdfsdf sdfsdfkjhsdkfj ksjdhfkjsdhfkjsdh sdkjfhskjdfhksjdf kjdhfskjdhfkjsdhfkjshdfkjsdhfkjsdhfkj',
+    text: 'Orci sagittis eu volutpat odio facilisis mauris sit amet. In hac habitasse platea dictumst quisque sagittis purus sit amet',
     status: 'pre-vote',
     votes:
       {
@@ -44,7 +44,7 @@ const proposals = [
   },
   {
     name: 'Catalunya should be independent',
-    text: 'SSDFSDF SDFsdfsdf sdfsdfkjhsdkfj ksjdhfkjsdhfkjsdh sdkjfhskjdfhksjdf kjdhfskjdhfkjsdhfkjshdfkjsdhfkjsdhfkj',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed euismod nisi porta lorem mollis aliquam. Purus semper eget duis at tellus at urna condimentum mattis. Elit at imperdiet dui accumsan. Ullamcorper eget nulla facilisi etiam dignissim diam quis enim lobortis. Nisl nisi scelerisque eu ultrices vitae auctor eu. Aliquam sem fringilla ut morbi tincidunt augue interdum velit euismod. Arcu non odio euismod lacinia at quis risus. Ac tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Id aliquet risus feugiat in ante. Pharetra convallis posuere morbi leo urna molestie at elementum. Feugiat in fermentum posuere urna nec. Sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat velit. Cursus euismod quis viverra nibh cras pulvinar mattis nunc sed. Lectus nulla at volutpat diam ut venenatis tellus in. Consequat interdum varius sit amet mattis. Sed sed risus pretium quam vulputate.Velit euismod in pellentesque massa placerat duis.Luctus accumsan tortor posuere ac ut consequat semper viverra nam.Bibendum enim facilisis gravida neque convallis.Dignissim convallis aenean et tortor at risus viverra.Suscipit tellus mauris a diam.Tempor orci dapibus ultrices in.Iaculis nunc sed augue lacus viverra vitae.Velit scelerisque in dictum non consectetur a erat nam at.Egestas integer eget aliquet nibh praesent.Sed risus pretium quam vulputate dignissim suspendisse in est.Cum sociis natoque penatibus et magnis dis.Etiam sit amet nisl purus in mollis nunc sed id.Malesuada nunc vel risus commodo viverra maecenas.',
     status: 'voting-in-progress',
     votes:
       {
@@ -68,7 +68,7 @@ const proposals = [
   },
   {
     name: 'Compulsory water drinking',
-    text: 'SSDFSDF SDFsdfsdf sdfsdfkjhsdkfj ksjdhfkjsdhfkjsdh sdkjfhskjdfhksjdf kjdhfskjdhfkjsdhfkjshdfkjsdhfkjsdhfkj',
+    text: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
     status: 'accepted',
     votes:
       {
@@ -88,7 +88,7 @@ const proposals = [
   },
   {
     name: 'Lets go to Mars on Thurday',
-    text: 'SSDFSDF SDFsdfsdf sdfsdfkjhsdkfj ksjdhfkjsdhfkjsdh sdkjfhskjdfhksjdf kjdhfskjdhfkjsdhfkjshdfkjsdhfkjsdhfkj',
+    text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
     status: 'rejected',
     votes:
       {
