@@ -37,14 +37,14 @@ body {
  background-color: black;
  color: white;
  padding: 8px 25px;
- font-size: 12px;
- margin-bottom: 50px;
+ font-size: 14px;
+ margin-bottom: 30px;
 }
 
 .proposal-container{
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: start;
   margin-bottom: 30px;
 }
 
@@ -96,5 +96,36 @@ a:hover{
  font-size: 14px;
  margin-bottom: 30px;
 }
+
+/* one-proposal */
+
+.prop-text{
+ 
+  background-color: rgba(99, 99, 99, 0.3);
+  font-size: 18px;
+  margin: 10px;
+  padding: 10px; 
+}
+
+.response{
+  margin: 10px;
+  color: white;
+  
+  padding: 25px;
+  font-size: 16px;
+}
+
+.positive{
+  background-color:rgb(0, 148, 68);
+  color: white;
+  
+}
+
+.negative{
+  border: 1px solid red;
+  background-color: rgb(218, 28, 92);
+  color: white;
+}
+
 
 

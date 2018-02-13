@@ -5,7 +5,7 @@
 <% proposals.forEach((theProposal) => { %>
   <div class="proposal-container">
     <div class="proposal">
-      <a href="/proposals/<%= theProposal._id %>"> <%= theProposal.name %></a> 
+    <a href="/proposals/<%= theProposal._id %>"> <%= theProposal.name %></a> 
     </div>
     <div class="proposal-status">
       <%= theProposal.status %>
