@@ -130,3 +130,5 @@ Proposal.create(proposals, (err, regUsers) => {
   });
   mongoose.disconnect();
 });
+
+// db.proposals.remove( { _id: ObjectId("5a82eef6d871e9129710255c") }, true )
