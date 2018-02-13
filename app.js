@@ -16,7 +16,7 @@ const app = express();
 
 // ---- Database ----
 
-mongoose.connect('mongodb://localhost/we-got-issues-db', {
+mongoose.connect('mongodb://localhost/we-got-issues-database', {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });

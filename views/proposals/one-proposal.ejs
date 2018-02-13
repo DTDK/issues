@@ -1,0 +1,11 @@
+<div>
+<%= proposal.text %>
+</div>
+
+<% proposal.responses.forEach((theResponse) => { %>
+<div class="response <%= theResponse.category %>">
+  <div>
+  <%= theResponse.text %>
+  </div>
+</div>
+<%});%>

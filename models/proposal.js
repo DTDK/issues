@@ -14,8 +14,8 @@ const ProposalSchema = Schema({
     },
   responses: [
     {
-      body: String,
-      affirm: Boolean
+      text: String,
+      category: String
     }
   ]
 });

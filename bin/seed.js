@@ -1,7 +1,7 @@
 'use strict';
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/we-got-issues-db');
+mongoose.connect('mongodb://localhost/we-got-issues-database');
 
 const User = require('../models/user');
 const Proposal = require('../models/proposal');
@@ -29,16 +29,16 @@ const proposals = [
       },
     responses: [
       {
-        body: 'Yes! I love the taste of pizza',
-        affirm: true
+        text: 'Yes! I love the taste of pizza',
+        category: 'positive'
       },
       {
-        body: 'Pizza makes you fat',
-        affirm: false
+        text: 'Pizza makes you fat',
+        category: 'negative'
       },
       {
-        body: 'Pizza is much cheaper than our usual lunch choice',
-        affirm: true
+        text: 'Pizza is much cheaper than our usual lunch choice',
+        category: 'positive'
       }
     ]
   },
@@ -53,16 +53,16 @@ const proposals = [
       },
     responses: [
       {
-        body: 'We will be more free without Spain!',
-        affirm: true
+        text: 'We will be more free without Spain!',
+        category: 'positive'
       },
       {
-        body: 'We won\'t be in the EU',
-        affirm: false
+        text: 'We won\'t be in the EU',
+        category: 'negative'
       },
       {
-        body: 'Pizza prices will rise if we leave',
-        affirm: false
+        text: 'Pizza prices will rise if we leave',
+        category: 'negative'
       }
     ]
   },
@@ -77,12 +77,12 @@ const proposals = [
       },
     responses: [
       {
-        body: 'Water is nice',
-        affirm: true
+        text: 'Water is nice',
+        category: 'positive'
       },
       {
-        body: 'Water is nasty',
-        affirm: false
+        text: 'Water is nasty',
+        category: 'negative'
       }
     ]
   },
@@ -97,16 +97,16 @@ const proposals = [
       },
     responses: [
       {
-        body: 'Yes! Mars is very fun',
-        affirm: true
+        text: 'Yes! Mars is very fun',
+        category: 'positive'
       },
       {
-        body: 'We will die you idiots',
-        affirm: false
+        text: 'We will die you idiots',
+        category: 'negative'
       },
       {
-        body: 'Its impossible to get there',
-        affirm: false
+        text: 'Its impossible to get there',
+        category: 'negative'
       }
     ]
   }
@@ -119,7 +119,7 @@ User.create(users, (err, regUsers) => {
     console.log(`${theUser.username} - ${theUser._id}`);
   });
   mongoose.disconnect();
-  mongoose.connect('mongodb://localhost/we-got-issues-db');
+  mongoose.connect('mongodb://localhost/we-got-issues-database');
 });
 
 Proposal.create(proposals, (err, regUsers) => {
