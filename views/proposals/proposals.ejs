@@ -1,7 +1,9 @@
-<div>DANI DOES HTML CSS</div>
-<a href="/proposals/new">Create Proposal</a>
+<div id="create-proposal">
+  <button onclick="window.location='/proposals/new';" id="btn-new-prop" class="btn">Create Proposal</button>
+<!--  <a href="/proposals/new"class="btn-new-prop">Create Proposal</a> -->
+</div>
 <% proposals.forEach((theProposal) => { %>
-  <div>
+  <div class="proposal">
     <a href="/proposals/<%= theProposal._id %>"> <%= theProposal.name %></a> 
     <div class="proposal-status">
       <%= theProposal.status %>

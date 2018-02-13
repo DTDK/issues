@@ -1,8 +1,80 @@
 body {
-  padding: 50px;
+  margin: 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+/* header stuff */
+#site-header {}
+
+.container{
+  background-color: rgb(255, 230, 0);
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+/* Proposals stuff */
+/*
+#create-proposal{
+  border: .5px solid black;
+  margin: 0 120px;
+  text-align: center;
+  padding: 5px 0;
+  
+}
+*/
+
+#create-proposal{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+}
+
+
+.btn:hover { 
+    background-color: transparent;
+    border: 1px solid black;
+    color: white;
+    
+}
+
+.btn:active{
+    background-color: white;
+    color: yellow;
+}
+
+#btn-new-prop{
+ border: 1px solid white;
+ background-color: black;
+ color: white;
+ padding: 8px 25px;
+ font-size: 12px;
+ margin-bottom: 30px;
+}
+/* index stuff */
+
+a:link, a:visited  { 
+    color: black;
+    text-decoration: none;
+    cursor: auto;
+}
+
+#salutation{
+  font-size: 20px;
+  text-align: center;
+  margin: 50px 0;
+}
+
+#btn-login{
+ background-color: black;
+ color: white;
+ padding: 8px 25px;
+ margin-left: 145px;
+ font-size: 16px;
+}
+
+.proposal{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 30px;
 }

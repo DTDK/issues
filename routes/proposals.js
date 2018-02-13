@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
     }
 
     res.render('proposals/proposals', {
-      title: 'Group X\'s Proposals...',
+      title: 'Group X\'s Proposals',
       proposals
     });
   });
