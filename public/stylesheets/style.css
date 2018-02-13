@@ -3,6 +3,19 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+.btn:hover {    /* not working */
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    color: black;   
+}
+
+.btn:active {  /* not working */
+    background-color: Transparent;
+    background-repeat: no-repeat;
+    border: 1px solid black;
+    color: yellow;
+}
 /* header stuff */
 #site-header {}
 
@@ -10,18 +23,9 @@ body {
   background-color: rgb(255, 230, 0);
   padding: 5px;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
 }
 /* Proposals stuff */
-/*
-#create-proposal{
-  border: .5px solid black;
-  margin: 0 120px;
-  text-align: center;
-  padding: 5px 0;
-  
-}
-*/
 
 #create-proposal{
   display: flex;
@@ -29,33 +33,54 @@ body {
   justify-content: center;
 }
 
-
-.btn:hover { 
-    background-color: transparent;
-    border: 1px solid black;
-    color: white;
-    
-}
-
-.btn:active{
-    background-color: white;
-    color: yellow;
-}
-
-#btn-new-prop{
- border: 1px solid white;
+.btn-new-prop{
  background-color: black;
  color: white;
  padding: 8px 25px;
  font-size: 12px;
- margin-bottom: 30px;
+ margin-bottom: 50px;
 }
+
+.proposal-container{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.proposal{
+   padding: 5px;
+   border: 1px solid black; 
+   width: 240px; 
+}
+
+.proposal-status{
+  margin-left: 5px;
+  border: 1px solid red;
+  padding: 5px;
+}
+
 /* index stuff */
 
+.index-container{
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+
+.welcome{
+  font-size: 25px;
+  font-weight: bold;
+}
 a:link, a:visited  { 
     color: black;
     text-decoration: none;
     cursor: auto;
+}
+
+a:hover{
+  color: rgb(0, 183, 255);
+  cursor: pointer;
 }
 
 #salutation{
@@ -64,17 +89,12 @@ a:link, a:visited  {
   margin: 50px 0;
 }
 
-#btn-login{
+.btn-login{
  background-color: black;
  color: white;
  padding: 8px 25px;
- margin-left: 145px;
- font-size: 16px;
+ font-size: 14px;
+ margin-bottom: 30px;
 }
 
-.proposal{
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
-  margin-bottom: 30px;
-}
+
