@@ -24,7 +24,7 @@ router.get('/new', (req, res, next) => {
     return res.redirect('/auth/login');
   } */
   res.render('proposals/new', {
-    title: 'Create Proposal...'
+    title: 'Create Proposal'
   });
 });
 
