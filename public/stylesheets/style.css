@@ -23,7 +23,7 @@ body {
   background-color: rgb(255, 230, 0);
   padding: 5px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 /* Proposals stuff */
 
@@ -42,7 +42,10 @@ body {
 }
 
 .meta-container{
-  
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+
 }
 
 .proposal-container{
@@ -57,12 +60,14 @@ body {
    padding: 5px;
    border: 1px solid black; 
    width: 240px; 
+   margin: 0 auto;
 }
 
 .proposal-status{
   margin-left: 5px;
   border: 1px solid red;
   padding: 5px;
+  margin: 0 auto;
 }
 
 /* index stuff */
@@ -133,6 +138,12 @@ a:hover{
 
 /* --- new proposal --- */
 
+.form-new{
+  font-size: 30px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
 
 .save-btn{ 
  background-color: black;
@@ -140,11 +151,32 @@ a:hover{
  padding: 8px 25px;
  font-size: 14px;
  margin-bottom: 30px;
-}
-.form-new{
-  font-size: 30px;
+ position: relative;
+ left: 180px;
 }
 
 
+.field{
+  margin-bottom: 50px;
+}
+
+
+#proposal-text{
+  position: relative;
+  top: 20px;
+  left: 10px;
+  font-size: 20px;
+}
+
+#proposal-name{
+  font-size: 20px;
+}
+
+.form-new a{
+  font-size: 20px;
+}
+
+
+.response-form
 
 
