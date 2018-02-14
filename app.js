@@ -1,5 +1,5 @@
 'use strict';
-
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
@@ -7,6 +7,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const expressLayouts = require('express-ejs-layouts');
+
 // const favicon = require('serve-favicon');
 
 const index = require('./routes/index');
@@ -16,7 +17,7 @@ const app = express();
 
 // ---- Database ----
 
-mongoose.connect('mongodb://localhost/we-got-issues-database', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
