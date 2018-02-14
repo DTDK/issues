@@ -112,21 +112,28 @@ const proposals = [
   }
 ];
 
-User.create(users, (err, regUsers) => {
+User.remove({}, (err) => {
   if (err) { throw err; }
 
-  regUsers.forEach(theUser => {
-    console.log(`${theUser.username} - ${theUser._id}`);
-  });
-
-  Proposal.create(proposals, (err, regUsers) => {
+  Proposal.remove({}, (err) => {
     if (err) { throw err; }
 
-    regUsers.forEach(theUser => {
-      console.log(`${theUser.name} - ${theUser._id}`);
+    User.create(users, (err, regUsers) => {
+      if (err) { throw err; }
+
+      regUsers.forEach(theUser => {
+        console.log(`${theUser.username} - ${theUser._id}`);
+      });
+
+      Proposal.create(proposals, (err, regUsers) => {
+        if (err) { throw err; }
+
+        regUsers.forEach(theUser => {
+          console.log(`${theUser.name} - ${theUser._id}`);
+        });
+        mongoose.disconnect();
+      });
     });
-    mongoose.disconnect();
   });
 });
-
 // db.proposals.remove( { _id: ObjectId("5a82eef6d871e9129710255c") }, true )
