@@ -46,7 +46,7 @@ app.use('/proposals', proposals);
 
 app.use(function (req, res, next) {
   res.status(404);
-  res.render('not-found');
+  res.render('not-found', {title: 'Not found'});
 });
 
 app.use(function (err, req, res, next) {
@@ -56,7 +56,7 @@ app.use(function (err, req, res, next) {
   // only render if the error ocurred before sending the response
   if (!res.headersSent) {
     res.status(500);
-    res.render('error');
+    res.render('error', {title: 'Error'});
   }
 });
 

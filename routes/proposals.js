@@ -10,11 +10,11 @@ router.get('/', (req, res, next) => {
     if (err) {
       return next(err);
     }
-
-    res.render('proposals/proposals', {
+    const data = {
       title: 'Group X\'s Proposals',
       proposals
-    });
+    };
+    res.render('proposals/proposals', data);
   });
 });
 
@@ -34,6 +34,8 @@ router.post('/', (req, res, next) => {
     return res.redirect('/auth/login');
   } */
 
+  // Backend validation goes here
+
   const theProposal = new Proposal({
     name: req.body.proposalName,
     text: req.body.proposalText,
@@ -42,15 +44,8 @@ router.post('/', (req, res, next) => {
       for: 0,
       against: 0
     },
-    responses: [
-      {
-        text: 'No one has responded to this proposal yet!',
-        category: 'initial'
-      }
-    ]
+    responses: []
   });
-
-  // Backend validation goes here (probably)..?
 
   theProposal.save((err) => {
     if (err) {
@@ -59,8 +54,6 @@ router.post('/', (req, res, next) => {
     res.redirect('/proposals');
   });
 });
-
-// router.get('/:id/addresponse');
 
 router.get('/:id', (req, res, next) => {
   const id = req.params.id;
@@ -79,7 +72,61 @@ router.get('/:id', (req, res, next) => {
       title: proposal.name,
       proposal
     };
-    res.render('proposals/one-proposal', data);
+    res.render('proposals/proposal-details', data);
+  });
+});
+
+/* Render the add NEW response GET */
+router.get('/:id/responses/new', (req, res, next) => {
+  const id = req.params.id;
+  Proposal.findById(id, (err, proposal) => {
+    if (err) {
+      return next(err);
+    }
+    if (!proposal) {
+      res.status(404);
+      const data = {
+        title: '404 Not Found'
+      };
+      return res.render('not-found', data);
+    }
+    const data = {
+      title: proposal.name,
+      proposal
+    };
+    res.render('proposals/responses/new', data);
+  });
+});
+
+/* Handle the POST to create a response */
+router.post('/:id/responses/new', (req, res, next) => {
+  /* if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  } */
+
+  const id = req.params.id;
+  const updates =
+    { $push:
+      { responses:
+        {
+          text: req.body.responseText,
+          category: req.body.responseValency
+        }
+      }
+    };
+
+  Proposal.update({_id: id}, updates, (err, proposal) => {
+    if (err) {
+      return next(err);
+    }
+    if (!proposal) {
+      res.status(404);
+      const data = {
+        title: '404 Not Found'
+      };
+      return res.render('not-found', data);
+    }
+    res.redirect('/proposals/' + id);
   });
 });
 

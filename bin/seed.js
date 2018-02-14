@@ -118,17 +118,15 @@ User.create(users, (err, regUsers) => {
   regUsers.forEach(theUser => {
     console.log(`${theUser.username} - ${theUser._id}`);
   });
-  mongoose.disconnect();
-  mongoose.connect('mongodb://localhost/we-got-issues-database');
-});
 
-Proposal.create(proposals, (err, regUsers) => {
-  if (err) { throw err; }
+  Proposal.create(proposals, (err, regUsers) => {
+    if (err) { throw err; }
 
-  regUsers.forEach(theUser => {
-    console.log(`${theUser.name} - ${theUser._id}`);
+    regUsers.forEach(theUser => {
+      console.log(`${theUser.name} - ${theUser._id}`);
+    });
+    mongoose.disconnect();
   });
-  mongoose.disconnect();
 });
 
 // db.proposals.remove( { _id: ObjectId("5a82eef6d871e9129710255c") }, true )

@@ -15,7 +15,10 @@ const ProposalSchema = Schema({
   responses: [
     {
       text: String,
-      category: String
+      category: {
+        type: String,
+        enum: ['positive', 'negative']
+      }
     }
   ]
 });
