@@ -136,6 +136,7 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  
 }
 
 .welcome{
@@ -159,6 +160,7 @@ a:hover{
   margin: 50px 0;
   background-color: rgb(240, 240, 240);
   padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn-login{
@@ -209,6 +211,16 @@ a:hover{
   align-items: center;
 }
 
+.form-container{
+  background-color: rgb(240, 240, 240);
+  padding: 25px;
+}
+
+.create-prop-inputs{
+  display:flex;
+  flex-flow: column nowrap;
+  
+}
 .save-btn{ 
  background-color: black;
  color: white;
@@ -231,14 +243,14 @@ a:hover{
 }
 
 .proposal-text-label{
-  margin-bottom: 10px;
+  
 }
 
 
 #proposal-text{
   position: relative;
   top: 20px;
-  left: 10px;
+  
   font-size: 16px;
   background-color: rgb(223, 223, 223);
   border: .1px solid black;
