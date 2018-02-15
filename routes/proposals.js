@@ -145,11 +145,17 @@ router.post('/:id', (req, res, next) => {
     return res.redirect('/auth/login');
   }
 
+  let update = {};
+
+  if (req.body.vote === 'yes') {
+    update = {$inc: {'votes.for': 1}};
+  } else if (req.body.vote === 'no') {
+    update = {$inc: {'votes.against': 1}};
+  }
+
   const id = req.params.id;
 
-  const updates = {$inc: {'votes.for': 1}};
-
-  Proposal.update({_id: id}, updates, (err, proposal) => {
+  Proposal.update({_id: id}, update, (err, proposal) => {
     if (err) {
       return next(err);
     }

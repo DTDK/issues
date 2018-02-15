@@ -23,8 +23,8 @@
     <% if (proposal.status === 'voting-in-progress') {%>
       <p>VOTE NOW!</p>
       <form action="/proposals/<%= proposal._id %>" method="POST">
-        <button class="btn" value="yes">YES</button>
-        <button class="btn" value="no">NO</button>
+        <button class="btn" name="vote" value="yes">YES</button>
+        <button class="btn" name="vote" value="no">NO</button>
       </form>
     <%}%>
     <% if (proposal.status === 'accepted') {%>
