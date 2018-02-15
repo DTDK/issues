@@ -44,10 +44,9 @@ textarea{
 }
 
 /* ---- ERROR ---- */
-.error{
-  display: flex;
-  flex-flow: row nowrap;
-  
+.error h1{
+  text-align: center;
+  color:white;
 }
 
 /* header stuff */
@@ -241,6 +240,7 @@ a:hover{
   display: flex;
   flex-flow: column nowrap;
   align-content: center;
+  
 
 }
 
@@ -248,7 +248,7 @@ a:hover{
   font-size: 18px;
   padding: 15px; 
   background-color: rgb(221, 221, 221);
-  margin-bottom: 50px;
+  margin-bottom: 15px;
   text-align: left;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
@@ -277,6 +277,17 @@ a:hover{
   margin-left: 100px;
 }
 
+.proposal-back{
+  margin: 15px auto;
+}
+
+.infopane{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  flex-grow:;
+}
 
 /* --- new proposal --- */
 
@@ -348,10 +359,7 @@ a:hover{
   font-size: 15px;
 }
 
-.prop-text{
-  
-  margin-bottom: 50px;
-}
+
 
 .radio-btns{
   display: flex;
