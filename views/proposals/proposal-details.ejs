@@ -9,3 +9,25 @@
   </div>
 </div>
 <%});%>
+
+<div class="infopane <%= proposal.status %>">
+  <div>
+    <% if (proposal.status === 'pre-vote') {%>
+      <p>Voting starts soon!</p>
+      <a href='/proposals/<%= proposal._id %>/responses/new'>ADD A RESPONSE</a>
+    <%}%>
+    <% if (proposal.status === 'voting-in-progress') {%>
+      <p>VOTE NOW!</p>
+      <form action="/proposals/<%= proposal._id %>" method="POST">
+        <button class="btn" value="yes">YES</button>
+        <button class="btn" value="no">NO</button>
+      </form>
+    <%}%>
+    <% if (proposal.status === 'accepted') {%>
+      <p>AA</p>
+    <%}%>
+    <% if (proposal.status === 'rejected') {%>
+      <p>RR</p>
+    <%}%> 
+  </div>
+</div>

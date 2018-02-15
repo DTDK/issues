@@ -139,4 +139,29 @@ router.post('/:id/responses/new', (req, res, next) => {
   });
 });
 
+/* Handle the POST to count votes */
+router.post('/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
+  const id = req.params.id;
+
+  const updates = {$inc: {'votes.for': 1}};
+
+  Proposal.update({_id: id}, updates, (err, proposal) => {
+    if (err) {
+      return next(err);
+    }
+    if (!proposal) {
+      res.status(404);
+      const data = {
+        title: '404 Not Found'
+      };
+      return res.render('not-found', data);
+    }
+    res.redirect('/proposals/' + id);
+  });
+});
+
 module.exports = router;
