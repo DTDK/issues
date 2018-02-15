@@ -21,3 +21,20 @@
   </form>
   <a href="/proposals">Back to proposals page</a>
 </div>
+
+<div class="infopane <%= proposal.status %>">
+    <div>
+      <% if (proposal.status === 'pre-vote') {%>
+        <p>Voting starts soon!</p>
+      <%}%>
+      <% if (proposal.status === 'voting-in-progress') {%>
+        <p>This proposal is in the voting stage. It's too late too respond!</p>
+      <%}%>
+      <% if (proposal.status === 'accepted') {%>
+        <p>The proposal was ACCEPTED!</p>
+      <%}%>
+      <% if (proposal.status === 'rejected') {%>
+        <p>The proposal was REJECTED!</p>
+      <%}%> 
+    </div>
+  </div>
