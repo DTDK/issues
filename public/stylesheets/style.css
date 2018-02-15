@@ -265,6 +265,7 @@ a:hover{
   background-color:rgb(0, 148, 68);
   color: white;
   
+  
 }
 
 .negative{
@@ -282,11 +283,25 @@ a:hover{
 }
 
 .infopane{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
-  flex-grow:;
+  font-size: 18px;
+  
+  
+}
+
+.infopane p{
+  text-align: center;
+  
+}
+
+.btn-soon{
+  font-size: 18px;
 }
 
 /* --- new proposal --- */
