@@ -1,11 +1,15 @@
-<div class="prop-text">
-<%= proposal.text %>
-</div>
+<div class="prop-details-container">
+  <div class="prop-text">
+  <%= proposal.text %>
+  </div>
 
-<% proposal.responses.forEach((theResponse) => { %>
-<div class="response <%= theResponse.category %>">
-  <div>
-  <%= theResponse.text %>
+  <a href="/proposals" class="proposal-back">Back to proposals page</a>
+
+  <% proposal.responses.forEach((theResponse) => { %>
+  <div class="response <%= theResponse.category %>">
+    <div>
+    <%= theResponse.text %>
+    </div>
   </div>
 </div>
 <%});%>
