@@ -9,11 +9,13 @@
   <body>
     <header id="site-header">
       <div class="container">
-        <h1><%= title %></h1>
+        <h1 class="title"><%= title %></h1>
           <% if (user) {%>
-            <form method="post" action="/auth/logout">
-              <button>Logout</button>
-            </form>
+            <div class="login-btn-container"></div>
+              <form method="post" action="/auth/logout">
+                <button class="btn  btn-logout">Logout</button>
+              </form>
+            </div>
           <%};%>
       </div>
     </header>
