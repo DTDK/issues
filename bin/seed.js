@@ -1,19 +1,25 @@
 'use strict';
-
+const bcrypt = require('bcrypt');
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/we-got-issues-database');
 
 const User = require('../models/user');
 const Proposal = require('../models/proposal');
 
+const bcryptSalt = 10;
+const salt = bcrypt.genSaltSync(bcryptSalt);
+
+const mattpasswordHash = bcrypt.hashSync('12345cheese', salt);
+const danipasswordHash = bcrypt.hashSync('123apple', salt);
+
 const users = [
   {
     username: 'dani',
-    password: '123'
+    password: danipasswordHash
   },
   {
     username: 'matt',
-    password: '123'
+    password: mattpasswordHash
   }
 ];
 
