@@ -4,10 +4,9 @@
 <div class="response-form">
   <form action="/proposals/<%= proposal._id %>/responses/new" method="POST" >
     <div class="field">
-      <textarea type="text" name="responseText">Add your response...</textarea>
+      <textarea type="text" name="responseText" id="response-text">Add your response...</textarea>
     </div>
     <div class="field">
-      
       <label for="for">For</label>
       <input type="radio" id="for" name="responseValency" value="positive">
       
@@ -15,10 +14,9 @@
       <input type="radio" id="against" name="responseValency" value="negative">
     
     </div>
-    <div>
-      <button>Save Response</button>
+    <div class="button">
+      <button class="btn save-response-btn">Save Response</button>
     </div>
   </form>
+  <a href="/proposals">Back to proposals page</a>
 </div>
-
-<a href="/proposals">Back to proposals page</a> -->

@@ -1,6 +1,8 @@
 body {
   margin: 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(196, 196, 196);
+  
 }
 
 .btn:hover {    /* not working */
@@ -16,14 +18,21 @@ body {
     border: 1px solid black;
     color: yellow;
 }
+
+.super-container{
+    /*background-color: rgb(196, 196, 196);*/
+    margin: 5px;
+}
 /* header stuff */
 #site-header {}
 
 .container{
-  background-color: rgb(255, 230, 0);
+  background-color: rgb(245, 245, 245);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
   padding: 5px;
   text-align: center;
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 /* Proposals stuff */
 
@@ -34,11 +43,12 @@ body {
 }
 
 .btn-new-prop{
- background-color: black;
+ background-color: rgb(78, 78, 78);
  color: white;
  padding: 8px 25px;
  font-size: 14px;
  margin-bottom: 30px;
+ border-radius: 3px;
 }
 
 .meta-container{
@@ -52,22 +62,72 @@ body {
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;
-  margin-bottom: 30px;
-  border: 1px solid gold;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  padding: 10px 25px 15px 25px;
+  background-color: rgb(221, 221, 221);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.proposal-container a{
+  margin-top: 5px;
+  font-size: 16px;
 }
 
 .proposal{
+   margin-right: 5px;
    padding: 5px;
    border: 1px solid black; 
-   width: 240px; 
-   margin: 0 auto;
+   flex-shrink:1;
+   
 }
 
-.proposal-status{
-  margin-left: 5px;
-  border: 1px solid red;
+.status{
+  
+  border-radius: 2px;
   padding: 5px;
-  margin: 0 auto;
+  align-self: flex-start;
+  border-radius: 2px;
+  text-align: center;
+  margin-left: auto;
+  flex-shrink:0;
+  flex-basis: 100px;
+  color: white;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.voting-in-progress{
+  background-color:  rgb(187, 187, 187);
+  border: 1px solid  rgb(187, 187, 187);
+  
+}
+
+.voting-in-progress > div{
+ -webkit-animation-name: blinker;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+}
+
+@keyframes blinker {
+  0% { opacity: 1;}
+  80% { opacity: 0;}
+}
+
+.rejected{
+  background-color:  rgb(218, 28, 92);
+  border: 1px solid  rgb(218, 28, 92);
+  color: white;
+}
+
+.accepted{
+  background-color:rgb(0, 148, 68);
+  border: 1px solid  rgb(0, 148, 68);
+  color: white;
+} 
+
+.pre-vote{
+  background-color: rgb(214, 214, 214);
 }
 
 /* index stuff */
@@ -97,6 +157,8 @@ a:hover{
   font-size: 20px;
   text-align: center;
   margin: 50px 0;
+  background-color: rgb(240, 240, 240);
+  padding: 25px;
 }
 
 .btn-login{
@@ -107,20 +169,22 @@ a:hover{
  margin-bottom: 30px;
 }
 
-/* one-proposal */
+/* --- proposal-details --- */
 
 .prop-text{
   font-size: 18px;
-  margin: 10px;
-  padding: 10px; 
+  padding: 15px; 
+  background-color: rgb(221, 221, 221);
+  margin-bottom: 50px;
+  text-align: left;
 }
 
 .response{
-  margin: 10px;
   color: white;
-  
   padding: 25px;
   font-size: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .positive{
@@ -139,7 +203,7 @@ a:hover{
 /* --- new proposal --- */
 
 .form-new{
-  font-size: 30px;
+  font-size: 16px;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -150,14 +214,24 @@ a:hover{
  color: white;
  padding: 8px 25px;
  font-size: 14px;
- margin-bottom: 30px;
- position: relative;
- left: 180px;
+ margin: 0 auto;
+ 
 }
 
 
 .field{
-  margin-bottom: 50px;
+  margin-bottom: 20px;
+}
+
+.save-btn-container{
+  display:flex;
+  flex-flow: row nowrap;
+  margin-bottom: 30px;
+  margin-top: 50px;
+}
+
+.proposal-text-label{
+  margin-bottom: 10px;
 }
 
 
@@ -165,18 +239,50 @@ a:hover{
   position: relative;
   top: 20px;
   left: 10px;
-  font-size: 20px;
+  font-size: 16px;
+  background-color: rgb(223, 223, 223);
+  border: .1px solid black;
 }
 
 #proposal-name{
-  font-size: 20px;
+  font-size: 16px;
+  border: .1px solid black;
+  line-height: 25px;
+  background-color: transparent;
 }
 
 .form-new a{
   font-size: 20px;
 }
 
+/* --- new response ----*/
+.response-form{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-size: 25px;
+}
 
-.response-form
+.save-response-btn{
+  background-color: black;
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin-bottom: 30px;
+  
+}
+
+#response-text{
+  font-size: 20px;
+}
+
+.response-form a{
+  font-size: 15px;
+}
+
+.prop-text{
+  
+  margin-bottom: 50px;
+}
 
 

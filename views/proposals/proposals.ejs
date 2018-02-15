@@ -1,16 +1,20 @@
+
+
 <div id="create-proposal">
   <button onclick="window.location='/proposals/new';"  class="btn btn-new-prop">Create Proposal</button>
 <!--  <a href="/proposals/new"class="btn-new-prop">Create Proposal</a> -->
 </div>
-<div class="meta-container">
-<% proposals.forEach((theProposal) => { %>
-  <div class="proposal-container">
-    <div class="proposal">
-    <a href="/proposals/<%= theProposal._id %>"> <%= theProposal.name %></a> 
+<!--<div class="meta-container">-->
+  <% proposals.forEach((theProposal) => { %>
+    <div class="proposal-container">
+     
+      <a href="/proposals/<%= theProposal._id %>"> <%= theProposal.name %></a> 
+      
+      <div class="status <%= theProposal.status %>">
+        <div class="blink">
+          <%= theProposal.status %>
+        </div>
+      </div>
     </div>
-    <div class="proposal-status">
-      <%= theProposal.status %>
-    </div>
-  </div>
-<%});%>
-</div>
+  <%});%>
+<!--</div>-->
