@@ -1,29 +1,101 @@
 body {
   margin: 5px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgb(90, 90, 90);
+  
 }
 
-.btn:hover {    /* not working */
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: 1px solid black;
-    color: black;   
+
+
+.btn:hover {    
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  color: black;   
 }
 
-.btn:active {  /* not working */
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: 1px solid black;
-    color: yellow;
+.btn:active {  
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  color: yellow;
 }
+
+.super-container{
+   
+  margin: 5px;
+}
+
+.field{
+  margin-bottom: 25px;
+}
+
+label{
+  color: rgb(116, 116, 116);
+  font-size: 16px;
+}
+
+input{
+  line-height: 25px;
+  font-size: 14px;
+}
+
+textarea{
+  line-height: 15px;
+  font-size: 14px;
+}
+
+p{
+  margin: 0;
+}
+
+/* ---- ERROR ---- */
+.error h1{
+  text-align: center;
+  color:white;
+}
+
 /* header stuff */
 #site-header {}
 
 .container{
-  background-color: rgb(255, 230, 0);
+  display:flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
   padding: 5px;
   text-align: center;
   margin-bottom: 40px;
+}
+
+.container h1{
+  text-align: center;
+  flex-grow: 2;
+}
+
+.login-btn-container{
+ 
+}
+
+.btn-logout{
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 6px 20px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+
+/*--- login stuff ----*/
+.btn-submit{
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin-bottom: 30px;
+  border-radius: 3px;
 }
 /* Proposals stuff */
 
@@ -34,35 +106,95 @@ body {
 }
 
 .btn-new-prop{
- background-color: black;
- color: white;
- padding: 8px 25px;
- font-size: 14px;
- margin-bottom: 30px;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin-bottom: 30px;
+  border-radius: 3px;
 }
 
 .meta-container{
-  
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+
 }
 
 .proposal-container{
   display: flex;
   flex-flow: row nowrap;
   justify-content: start;
-  margin-bottom: 30px;
-  border: 1px solid gold;
+  margin-bottom: 20px;
+  border-radius: 2px;
+  padding: 10px 25px 15px 25px;
+  background-color: rgb(221, 221, 221);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.proposal-container a{
+  margin-top: 5px;
+  font-size: 16px;
 }
 
 .proposal{
-   padding: 5px;
-   border: 1px solid black; 
-   width: 240px; 
+  margin-right: 5px;
+  padding: 5px;
+  border: 1px solid black; 
+  flex-shrink:1;
+   
 }
 
-.proposal-status{
-  margin-left: 5px;
-  border: 1px solid red;
-  padding: 5px;
+.status{
+  border-radius: 2px;
+  padding: 3px;
+  align-self: flex-start;
+  border-radius: 2px;
+  text-align: center;
+  margin-left: auto;
+  flex-shrink:0;
+  flex-basis: 100px;
+  color: white;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1); 
+}
+
+.voting-in-progress{
+  background-color:  rgb(187, 187, 187);
+  border: 1px solid  rgb(187, 187, 187);
+  color: rgb(255, 0, 85);
+  
+}
+
+.voting-in-progress p{
+ -webkit-animation-name: blinker;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  margin:0;
+}
+
+
+
+@keyframes blinker {
+  0% { opacity: 1;}
+  80% { opacity: 0;}
+}
+
+
+.rejected{
+  background-color:  rgb(218, 28, 92);
+  border: 1px solid  rgb(218, 28, 92);
+  color: white;
+}
+
+.accepted{
+  background-color:rgb(0, 148, 68);
+  border: 1px solid  rgb(0, 148, 68);
+  color: white;
+} 
+
+.pre-vote{
+  background-color: rgb(214, 214, 214);
 }
 
 /* index stuff */
@@ -71,16 +203,20 @@ body {
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
+  
+  
 }
 
 .welcome{
   font-size: 25px;
   font-weight: bold;
+  
+
 }
 a:link, a:visited  { 
-    color: black;
-    text-decoration: none;
-    cursor: auto;
+  color: black;
+  text-decoration: none;
+  cursor: auto;
 }
 
 a:hover{
@@ -92,35 +228,51 @@ a:hover{
   font-size: 20px;
   text-align: center;
   margin: 50px 0;
+  background-color: rgb(221, 221, 221);
+  padding: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .btn-login{
- background-color: black;
- color: white;
- padding: 8px 25px;
- font-size: 14px;
- margin-bottom: 30px;
+  background-color: rgb(78, 78, 78);
+  border-radius: 3px;
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin-bottom: 30px;
 }
 
-/* one-proposal */
+/* --- proposal-details --- */
+
+.prop-details-container{
+  display: flex;
+  flex-flow: column nowrap;
+  align-content: center;
+  height: 1400px;
+  
+}
 
 .prop-text{
   font-size: 18px;
-  margin: 10px;
-  padding: 10px; 
+  padding: 15px; 
+  background-color: rgb(221, 221, 221);
+  margin-bottom: 15px;
+  text-align: left;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .response{
-  margin: 10px;
   color: white;
-  
   padding: 25px;
   font-size: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 .positive{
   background-color:rgb(0, 148, 68);
   color: white;
+  
   
 }
 
@@ -130,21 +282,145 @@ a:hover{
   color: white;
 }
 
+.proposal-details-back{
+  margin-left: 100px;
+}
+
+.proposal-back{
+  margin: 15px auto;
+  font-size: 20px;
+}
+
+.proposal-back a{
+  color: white;
+}
+
+.infopane{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  font-size: 18px;
+  /*box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.2);*/
+  padding: 10px;
+}
+
+.infopane p{
+  text-align: center;
+  margin: 10px 0;
+}
+
+.infopane a{
+  position: relative;
+  left: 30px;
+  margin: 10px 0;
+  font-size: 12px;
+}
+
+.btn-soon{
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 6px 20px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.add-response{
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 6px 20px;
+  font-size: 12px;
+  border-radius: 3px;
+  position:relative;
+  left: 35px;
+}
+
 
 /* --- new proposal --- */
 
 
+
+.form-container{
+  background-color: rgb(221, 221, 221);
+  padding: 25px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  
+}
+
 .save-btn{ 
- background-color: black;
- color: white;
- padding: 8px 25px;
- font-size: 14px;
- margin-bottom: 30px;
-}
-.form-new{
-  font-size: 30px;
+  background-color: rgb(78, 78, 78);
+  border-radius: 2px;
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin: 0 auto;
 }
 
+.field{
+  display: flex;
+  flex-flow: column;
+}
+
+.save-btn-container{
+  display:flex;
+  flex-flow: row nowrap;
+  margin-bottom: 30px;
+  margin-top: 20px;
+}
+
+
+.form-new a{
+  font-size: 20px;
+}
+
+/* --- new response ----*/
+
+.response-form{
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-size: 25px;
+}
+
+.save-response-btn{
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin-bottom: 30px;
+  
+}
+
+#response-text{
+  font-size: 16px;
+}
+
+.response-form a{
+  font-size: 15px;
+}
 
 
 
+.radio-btns{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  
+}
+
+.radio-btns :nth-child(1) { order: 2; }
+.radio-btns :nth-child(2) { order: 1; }
+.radio-btns :nth-child(3) { order: 4; }
+.radio-btns :nth-child(4) { order: 3; }
+
+
+.resp-button-container{
+  display: flex;
+  justify-content: center;
+}

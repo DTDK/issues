@@ -4,7 +4,10 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'WE HAVE ISSUES' });
+  if (req.session.currentUser) {
+    return res.redirect('/proposals');
+  }
+  res.render('index', { title: 'WE GOT ISSUES' });
 });
 
 module.exports = router;

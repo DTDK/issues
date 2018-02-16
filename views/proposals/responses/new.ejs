@@ -1,22 +1,40 @@
 <div class="prop-text">
   <%= proposal.text %>
 </div>
-<form action="/proposals/<%= proposal._id %>/responses/new" method="POST" >
-  <div class="field">
-    <textarea type="text" name="responseText">Add your response...</textarea>
-  </div>
-  <div class="field">
+<div class="response-form">
+  <form action="/proposals/<%= proposal._id %>/responses/new" method="POST" >
+    <div class="field">
+      <label for="response-text">Response</label>
+      <textarea type="text" name="responseText" id="response-text">Add your response...</textarea>
+    </div>
+    <div class="field radio-btns">
+      <label for="for">For</label>
+      <input type="radio" id="for" name="responseValency" value="positive">
+      
+      <label for="against">Against</label>
+      <input type="radio" id="against" name="responseValency" value="negative">
     
-    <label for="for">For</label>
-    <input type="radio" id="for" name="responseValency" value="positive">
-    
-    <label for="against">Against</label>
-    <input type="radio" id="against" name="responseValency" value="negative">
-  
-  </div>
-  <div>
-    <button>Save Response</button>
-  </div>
-</form>
+    </div>
+    <div class="resp-button-container">
+      <button class="btn save-response-btn">Save Response</button>
+    </div>
+  </form>
+  <a href="/proposals">Back to proposals page</a>
+</div>
 
-<a href="/proposals">Back to proposals page</a> -->
+<div class="infopane <%= proposal.status %>">
+    <div>
+      <% if (proposal.status === 'pre-vote') {%>
+        <p>Voting starts soon!</p>
+      <%}%>
+      <% if (proposal.status === 'voting-in-progress') {%>
+        <p>This proposal is in the voting stage. It's too late too respond!</p>
+      <%}%>
+      <% if (proposal.status === 'accepted') {%>
+        <p>The proposal was ACCEPTED!</p>
+      <%}%>
+      <% if (proposal.status === 'rejected') {%>
+        <p>The proposal was REJECTED!</p>
+      <%}%> 
+    </div>
+  </div>

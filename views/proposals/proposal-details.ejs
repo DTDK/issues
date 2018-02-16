@@ -1,11 +1,47 @@
-<div class="prop-text">
-<%= proposal.text %>
+<div class="prop-details-container">
+  <div class="prop-text">
+  <%= proposal.text %>
+  </div>
+
+  <a href="/proposals" class="proposal-back">Back to proposals page</a>
+
+  <% proposal.responses.forEach((theResponse) => { %>
+  <div class="response <%= theResponse.category %>">
+    <div>
+    <%= theResponse.text %>
+    </div>
+  </div>
+
+<%});%>
+
+<div class="infopane <%= proposal.status %>">
+  
+    <% if (proposal.status === 'pre-vote') {%>
+      <div class="soon">
+        <p>Voting starts soon!</p>
+      </div>
+      <div>
+        <button onclick="window.location='/proposals/<%= proposal._id %>/responses/new';" class="btn add-response">ADD A RESPONSE</button>
+       <!-- <a href='/proposals/<%= proposal._id %>/responses/new'>ADD A RESPONSE</a>-->
+      </div>
+    <%}%>
+    <% if (proposal.status === 'voting-in-progress') {%>
+    <div>
+      <div class="vote-now">
+        <p>VOTE NOW!</p>
+      </div>
+      <form action="/proposals/<%= proposal._id %>" method="POST">
+        <button class="btn-soon" name="vote" value="yes">YES</button>
+        <button class="btn-soon" name="vote" value="no">NO</button>
+      </form>
+    </div>
+    <%}%>
+    <% if (proposal.status === 'accepted') {%>
+      <p>The proposal was ACCEPTED!</p>
+    <%}%>
+    <% if (proposal.status === 'rejected') {%>
+      <p>The proposal was REJECTED!</p>
+    <%}%> 
+ 
 </div>
 
-<% proposal.responses.forEach((theResponse) => { %>
-<div class="response <%= theResponse.category %>">
-  <div>
-  <%= theResponse.text %>
-  </div>
-</div>
-<%});%>

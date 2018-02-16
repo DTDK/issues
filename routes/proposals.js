@@ -6,12 +6,15 @@ const router = express.Router();
 const Proposal = require('../models/proposal');
 
 router.get('/', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
   Proposal.find({}, (err, proposals) => {
     if (err) {
       return next(err);
     }
     const data = {
-      title: 'Group X\'s Proposals',
+      title: 'IH Web Dev Proposals',
       proposals
     };
     res.render('proposals/proposals', data);
@@ -20,9 +23,9 @@ router.get('/', (req, res, next) => {
 
 /* Render the new proposal form */
 router.get('/new', (req, res, next) => {
-  /* if (!req.session.currentUser) {
+  if (!req.session.currentUser) {
     return res.redirect('/auth/login');
-  } */
+  }
   res.render('proposals/new', {
     title: 'Create Proposal'
   });
@@ -30,9 +33,9 @@ router.get('/new', (req, res, next) => {
 
 /* Handle the POST from the new proposal form */
 router.post('/', (req, res, next) => {
-  /* if (!req.session.currentUser) {
+  if (!req.session.currentUser) {
     return res.redirect('/auth/login');
-  } */
+  }
 
   // Backend validation goes here
 
@@ -56,6 +59,9 @@ router.post('/', (req, res, next) => {
 });
 
 router.get('/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
   const id = req.params.id;
   Proposal.findById(id, (err, proposal) => {
     if (err) {
@@ -78,6 +84,9 @@ router.get('/:id', (req, res, next) => {
 
 /* Render the add NEW response GET */
 router.get('/:id/responses/new', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
   const id = req.params.id;
   Proposal.findById(id, (err, proposal) => {
     if (err) {
@@ -100,9 +109,9 @@ router.get('/:id/responses/new', (req, res, next) => {
 
 /* Handle the POST to create a response */
 router.post('/:id/responses/new', (req, res, next) => {
-  /* if (!req.session.currentUser) {
+  if (!req.session.currentUser) {
     return res.redirect('/auth/login');
-  } */
+  }
 
   const id = req.params.id;
   const updates =
@@ -116,6 +125,37 @@ router.post('/:id/responses/new', (req, res, next) => {
     };
 
   Proposal.update({_id: id}, updates, (err, proposal) => {
+    if (err) {
+      return next(err);
+    }
+    if (!proposal) {
+      res.status(404);
+      const data = {
+        title: '404 Not Found'
+      };
+      return res.render('not-found', data);
+    }
+    res.redirect('/proposals/' + id);
+  });
+});
+
+/* Handle the POST to count votes */
+router.post('/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.redirect('/auth/login');
+  }
+
+  let update = {};
+
+  if (req.body.vote === 'yes') {
+    update = {$inc: {'votes.for': 1}};
+  } else if (req.body.vote === 'no') {
+    update = {$inc: {'votes.against': 1}};
+  }
+
+  const id = req.params.id;
+
+  Proposal.update({_id: id}, update, (err, proposal) => {
     if (err) {
       return next(err);
     }
