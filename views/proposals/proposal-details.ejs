@@ -21,7 +21,8 @@
         <p>Voting starts soon!</p>
       </div>
       <div>
-        <a href='/proposals/<%= proposal._id %>/responses/new'>ADD A RESPONSE</a>
+        <button onclick="window.location='/proposals/<%= proposal._id %>/responses/new';" class="btn add-response">ADD A RESPONSE</button>
+       <!-- <a href='/proposals/<%= proposal._id %>/responses/new'>ADD A RESPONSE</a>-->
       </div>
     <%}%>
     <% if (proposal.status === 'voting-in-progress') {%>

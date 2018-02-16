@@ -5,6 +5,8 @@ body {
   
 }
 
+
+
 .btn:hover {    
   background-color: Transparent;
   background-repeat: no-repeat;
@@ -302,7 +304,8 @@ a:hover{
   right: 0;
   left: 0;
   font-size: 18px;
-   box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.2);
+  /*box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.2);*/
+  padding: 10px;
 }
 
 .infopane p{
@@ -310,10 +313,30 @@ a:hover{
   margin: 10px 0;
 }
 
-.btn-soon{
-  font-size: 18px;
+.infopane a{
+  position: relative;
+  left: 30px;
+  margin: 10px 0;
+  font-size: 12px;
 }
 
+.btn-soon{
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 6px 20px;
+  font-size: 12px;
+  border-radius: 3px;
+}
+
+.add-response{
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 6px 20px;
+  font-size: 12px;
+  border-radius: 3px;
+  position:relative;
+  left: 35px;
+}
 
 
 /* --- new proposal --- */

@@ -14,7 +14,7 @@ router.get('/', (req, res, next) => {
       return next(err);
     }
     const data = {
-      title: 'Group X\'s Proposals',
+      title: 'IH Web Dev Proposals',
       proposals
     };
     res.render('proposals/proposals', data);
