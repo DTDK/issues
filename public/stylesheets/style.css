@@ -246,6 +246,7 @@ a:hover{
   display: flex;
   flex-flow: column nowrap;
   align-content: center;
+  height: 1400px;
   
 }
 
