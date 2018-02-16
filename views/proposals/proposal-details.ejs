@@ -15,17 +15,25 @@
 <%});%>
 
 <div class="infopane <%= proposal.status %>">
-  <div>
+  
     <% if (proposal.status === 'pre-vote') {%>
-      <p>Voting starts soon!</p>
-      <a href='/proposals/<%= proposal._id %>/responses/new'>ADD A RESPONSE</a>
+      <div class="soon">
+        <p>Voting starts soon!</p>
+      </div>
+      <div>
+        <a href='/proposals/<%= proposal._id %>/responses/new'>ADD A RESPONSE</a>
+      </div>
     <%}%>
     <% if (proposal.status === 'voting-in-progress') {%>
-      <p>VOTE NOW!</p>
+    <div>
+      <div class="vote-now">
+        <p>VOTE NOW!</p>
+      </div>
       <form action="/proposals/<%= proposal._id %>" method="POST">
-        <button class="btn" name="vote" value="yes">YES</button>
-        <button class="btn" name="vote" value="no">NO</button>
+        <button class="btn-soon" name="vote" value="yes">YES</button>
+        <button class="btn-soon" name="vote" value="no">NO</button>
       </form>
+    </div>
     <%}%>
     <% if (proposal.status === 'accepted') {%>
       <p>The proposal was ACCEPTED!</p>
@@ -33,5 +41,6 @@
     <% if (proposal.status === 'rejected') {%>
       <p>The proposal was REJECTED!</p>
     <%}%> 
-  </div>
+ 
 </div>
+

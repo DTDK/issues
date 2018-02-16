@@ -5,23 +5,23 @@ body {
   
 }
 
-.btn:hover {    /* not working */
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: 1px solid black;
-    color: black;   
+.btn:hover {    
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  color: black;   
 }
 
-.btn:active {  /* not working */
-    background-color: Transparent;
-    background-repeat: no-repeat;
-    border: 1px solid black;
-    color: yellow;
+.btn:active {  
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: 1px solid black;
+  color: yellow;
 }
 
 .super-container{
    
-    margin: 5px;
+  margin: 5px;
 }
 
 .field{
@@ -29,7 +29,7 @@ body {
 }
 
 label{
-  color: rgb(168, 168, 168);
+  color: rgb(116, 116, 116);
   font-size: 16px;
 }
 
@@ -41,6 +41,10 @@ input{
 textarea{
   line-height: 15px;
   font-size: 14px;
+}
+
+p{
+  margin: 0;
 }
 
 /* ---- ERROR ---- */
@@ -74,23 +78,22 @@ textarea{
 }
 
 .btn-logout{
- background-color: rgb(78, 78, 78);
- color: white;
- padding: 6px 20px;
- font-size: 12px;
- 
- border-radius: 3px;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 6px 20px;
+  font-size: 12px;
+  border-radius: 3px;
 }
 
 
 /*--- login stuff ----*/
 .btn-submit{
- background-color: rgb(78, 78, 78);
- color: white;
- padding: 8px 25px;
- font-size: 14px;
- margin-bottom: 30px;
- border-radius: 3px;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin-bottom: 30px;
+  border-radius: 3px;
 }
 /* Proposals stuff */
 
@@ -101,12 +104,12 @@ textarea{
 }
 
 .btn-new-prop{
- background-color: rgb(78, 78, 78);
- color: white;
- padding: 8px 25px;
- font-size: 14px;
- margin-bottom: 30px;
- border-radius: 3px;
+  background-color: rgb(78, 78, 78);
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin-bottom: 30px;
+  border-radius: 3px;
 }
 
 .meta-container{
@@ -133,17 +136,16 @@ textarea{
 }
 
 .proposal{
-   margin-right: 5px;
-   padding: 5px;
-   border: 1px solid black; 
-   flex-shrink:1;
+  margin-right: 5px;
+  padding: 5px;
+  border: 1px solid black; 
+  flex-shrink:1;
    
 }
 
 .status{
-  
   border-radius: 2px;
-  padding: 5px;
+  padding: 3px;
   align-self: flex-start;
   border-radius: 2px;
   text-align: center;
@@ -161,17 +163,21 @@ textarea{
   
 }
 
-.voting-in-progress > div{
+.voting-in-progress p{
  -webkit-animation-name: blinker;
   -webkit-animation-duration: 2s;
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
+  margin:0;
 }
+
+
 
 @keyframes blinker {
   0% { opacity: 1;}
   80% { opacity: 0;}
 }
+
 
 .rejected{
   background-color:  rgb(218, 28, 92);
@@ -206,9 +212,9 @@ textarea{
 
 }
 a:link, a:visited  { 
-    color: black;
-    text-decoration: none;
-    cursor: auto;
+  color: black;
+  text-decoration: none;
+  cursor: auto;
 }
 
 a:hover{
@@ -226,12 +232,12 @@ a:hover{
 }
 
 .btn-login{
- background-color: rgb(78, 78, 78);
- border-radius: 3px;
- color: white;
- padding: 8px 25px;
- font-size: 14px;
- margin-bottom: 30px;
+  background-color: rgb(78, 78, 78);
+  border-radius: 3px;
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin-bottom: 30px;
 }
 
 /* --- proposal-details --- */
@@ -241,7 +247,6 @@ a:hover{
   flex-flow: column nowrap;
   align-content: center;
   
-
 }
 
 .prop-text{
@@ -265,6 +270,7 @@ a:hover{
   background-color:rgb(0, 148, 68);
   color: white;
   
+  
 }
 
 .negative{
@@ -279,15 +285,35 @@ a:hover{
 
 .proposal-back{
   margin: 15px auto;
+  font-size: 20px;
+}
+
+.proposal-back a{
+  color: white;
 }
 
 .infopane{
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
   position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
-  flex-grow:;
+  font-size: 18px;
+   box-shadow: 0 -3px 5px rgba(0, 0, 0, 0.2);
 }
+
+.infopane p{
+  text-align: center;
+  margin: 10px 0;
+}
+
+.btn-soon{
+  font-size: 18px;
+}
+
+
 
 /* --- new proposal --- */
 
@@ -304,12 +330,12 @@ a:hover{
 }
 
 .save-btn{ 
- background-color: rgb(78, 78, 78);
- border-radius: 2px;
- color: white;
- padding: 8px 25px;
- font-size: 14px;
- margin: 0 auto;
+  background-color: rgb(78, 78, 78);
+  border-radius: 2px;
+  color: white;
+  padding: 8px 25px;
+  font-size: 14px;
+  margin: 0 auto;
 }
 
 .field{
@@ -322,10 +348,6 @@ a:hover{
   flex-flow: row nowrap;
   margin-bottom: 30px;
   margin-top: 20px;
-}
-
-.proposal-text-label{
-  
 }
 
 
@@ -373,9 +395,6 @@ a:hover{
 .radio-btns :nth-child(3) { order: 4; }
 .radio-btns :nth-child(4) { order: 3; }
 
-.radio-btns :nth-child(1){
- 
-}
 
 .resp-button-container{
   display: flex;
