@@ -61,7 +61,7 @@ const proposals = [
   },
   {
     name: 'Schedule for Friday',
-    text: 'This Friday, we should do these sessions, in the following order: - Learn about Javascript Promises - In parallel: - Review doubts - Project work in pairs - Learn about industry culture (with beers!)',
+    text: 'This Friday, we should do these sessions, in the following order: (1) Learn about Javascript Promises. (2) Review doubts. (3) Project work in pairs. (4) Learn about industry culture (with beers!).',
     status: 'accepted',
     votes:
       {
